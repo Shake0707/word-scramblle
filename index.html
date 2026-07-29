@@ -7,7 +7,34 @@
     <title>word-scrablle</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="box">
+      <h1 class="title">Word Scramblle</h1>
+      <div class="random-box"></div>
+      <div class="tries-mistakes">
+        <div class="left">
+          <div>
+            Tries (<span id="tries_num">0</span>/5): 
+          </div>
+          <div id="tries_vizual" class="tries_vizual">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="right">
+          Mistakes: <div id="mistakes">a, e, w, t</div>
+        </div>
+      </div>
+      <div class="input">
+
+      </div>
+      <div class="action">
+        <button class="btn" id="random">Random</button>
+        <button class="btn" id="reset">Reset</button>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
