@@ -1,4 +1,5 @@
 import './style.css';
+import { createInputs } from './utility/createInputs';
 import { fetchFunc } from './utility/fetchFunc';
 import { scrambleWord } from './utility/scrambleWord';
 
@@ -8,6 +9,7 @@ const tries = 0;
 const randomBtn = document.getElementById("random") as HTMLButtonElement;
 const loaderLetters = document.getElementById("loader-letters") as HTMLDivElement;
 const randomLetters = document.getElementById("random_letters") as HTMLHeadingElement;
+const inputsFrame = document.querySelector(".input_frame") as HTMLDivElement;
 
 let randomWord = "";
 
@@ -16,6 +18,7 @@ fetchFunc().then(data => {
     loaderLetters.style.display = "none";
     randomLetters.style.display = "block";
     randomLetters.innerHTML = scrambleWord(randomWord);
+    createInputs(randomWord.length, inputsFrame);
     console.log(randomWord);
 });
 
@@ -28,6 +31,7 @@ randomBtn.addEventListener("click", () => {
             loaderLetters.style.display = "none";
             randomLetters.style.display = "block";
             randomLetters.innerHTML = scrambleWord(randomWord);
+            createInputs(randomWord.length, inputsFrame);
             console.log(randomWord);
         });
     } catch (error) {
